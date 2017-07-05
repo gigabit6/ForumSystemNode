@@ -1,0 +1,22 @@
+{{#each threads}}
+    <h2>{{this.title}} -- {{this.category.name}}</h2>
+    <h4>{{this.description}}</h4>
+    <h5>Views: {{this.views}}</h5>
+    <p>Likes: {{this.likedBy.length}}</p>
+    <a href="/thread/{{this._id}}/{{this.title}}">See thread</a>
+    {{#if this.likeAllowed}}
+    <a href="/thread/like/{{this._id}}">Like this thread</a>
+    {{else}}
+    <a href="/thread/unlike/{{this._id}}">Unlike this thread</a>
+    {{/if}}
+{{/each}}
+
+<div>
+  {{#if hasPrevPage}}
+    <a href="/thread/all?page={{prevPage}}">&lt;&lt;</a>
+    &nbsp; &nbsp; &nbsp;
+  {{/if}}
+  {{#if hasNextPage}}
+    <a href="/thread/all?page={{nextPage}}">&gt;&gt;</a>
+  {{/if}}
+</div>

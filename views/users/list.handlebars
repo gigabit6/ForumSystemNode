@@ -1,0 +1,10 @@
+{{#each users}}
+<span>{{this.username}}</span> 
+<span>{{this.firstName}}</span> 
+<span>{{this.lastName}}</span> 
+<a href="/admins/add/{{this._id}}">Make admin</a>
+{{#unless this.isBlocked}}
+<a href="/user/block/{{this._id}}">Block</a> 
+{{/unless}}
+</br>
+{{/each}}

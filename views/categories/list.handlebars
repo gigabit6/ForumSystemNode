@@ -1,0 +1,9 @@
+{{#each categories}}
+<a href="/list/{{this.name}}">{{this.name}}</a>
+{{#if ../isAdmin}}
+<form action="/category/delete/{{this._id}}" method="POST">
+    <input type="submit" value="Delete"/>
+</form>
+{{/if}}
+</br>
+{{/each}}
